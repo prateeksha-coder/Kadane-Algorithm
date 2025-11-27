@@ -21,20 +21,24 @@ def maxcircularsum(a):
 
    # apply kadane algo if no circular is needed
    max_kadane = kadane(a)
+   
 
    # find sum of all element and invert them 
    max_wrap = 0
    for i in range(0, n):
     max_wrap += a[i]
     a[i] = -a[i]
-    print(a)
+    #print(a,max_wrap)
+    
 
   # apply kadance algo to find minium inverted subarray
-   max_wrap = max_wrap + kadane(a)
+   max_wrap = max_wrap + kadane(a)#here kadane(a) is calculating the minimum contiguous subarray sum 
+
 
   #the maxium circular sum will be a maxium of two sums
    if max_wrap > max_kadane:
       return max_wrap
+   
 
 
 a=[8, -1, 3, 4]
